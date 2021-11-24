@@ -27,6 +27,16 @@ public class NovaEmpresaServlet extends HttpServlet {
 		String nomeDaEmpresa = request.getParameter("nome");
 		String cnpjDaEmpresa = request.getParameter("cnpj");
 		
+		//criando objeto empresa
+		Empresa empresa = new Empresa();
+		empresa.setNome(nomeDaEmpresa);
+		
+		//simular o banco de dados
+		//implementar em outro momento a conexão com o BD
+		
+		Banco banco = new Banco(); 
+		banco.adiciona(empresa);
+		
 		//escreve a mensagem na tela do navegador
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
